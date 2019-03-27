@@ -3,6 +3,11 @@ import axios from "axios";
 import { withRouter } from "react-router";
 import { NavLink } from "react-router-dom";
 
+var divStyle = {
+  color: '#26bfd4',
+  cursor: 'pointer'
+  };
+
 const NavigationComponent = props => {
   const dynamicLink = (route, linkText) => {
     return (
@@ -64,7 +69,7 @@ const NavigationComponent = props => {
       <div className="right-side">
         TYREL HUSEBY
         {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handleSignOut}>Sign Out</a>
+          <a onClick={handleSignOut}> <i className="fas fa-sign-out-alt" style = {divStyle}></i></a>
         ) : null}
       </div>
     </div>
