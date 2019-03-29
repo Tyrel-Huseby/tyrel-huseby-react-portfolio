@@ -1,12 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { withRouter } from "react-router";
 import { NavLink } from "react-router-dom";
-
-var divStyle = {
-  color: '#26bfd4',
-  cursor: 'pointer'
-  };
 
 const NavigationComponent = props => {
   const dynamicLink = (route, linkText) => {
@@ -69,7 +65,9 @@ const NavigationComponent = props => {
       <div className="right-side">
         TYREL HUSEBY
         {props.loggedInStatus === "LOGGED_IN" ? (
-          <a onClick={handleSignOut}> <i className="fas fa-sign-out-alt" style = {divStyle}></i></a>
+          <a onClick={handleSignOut}>
+            <FontAwesomeIcon icon="sign-out-alt" />
+          </a>
         ) : null}
       </div>
     </div>

@@ -26,7 +26,7 @@ export default class PortfolioContainer extends Component {
 
   getPortfolioItems() {
     axios
-      .get("https://jordan.devcamp.space/portfolio/portfolio_items")
+      .get("https://thusebybusiness.devcamp.space/portfolio/portfolio_items")
       .then(response => {
         this.setState({
           data: response.data.portfolio_items
@@ -63,6 +63,15 @@ export default class PortfolioContainer extends Component {
         <button className="btn" onClick={() => this.handleFilter("Enterprise")}>
           Enterprise
         </button>
+        {/* <button className="btn" onClick={() => this.handleFilter("Personal")}>
+          Personal
+        </button>
+        <button className="btn" onClick={() => this.handleFilter("Games")}>
+          Games
+        </button>
+        <button className="btn" onClick={() => this.handleFilter("Misc")}>
+          Misc
+        </button> */}
 
         {this.portfolioItems()}
       </div>
