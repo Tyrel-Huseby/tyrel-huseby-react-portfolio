@@ -65,6 +65,12 @@ export default class PortfolioContainer extends Component {
         <div className="filter-links">
           <button
             className="btn"
+            onClick={() => this.handleFilter("CLEAR_FILTERS")}
+          >
+            All
+          </button>
+          <button
+            className="btn"
             onClick={() => this.handleFilter("eCommerce")}
           >
             eCommerce
@@ -81,24 +87,26 @@ export default class PortfolioContainer extends Component {
           >
             Enterprise
           </button>
-          <button
-            className="btn"
-            onClick={() => this.handleFilter("CLEAR_FILTERS")}
-          >
-            All
+          <button 
+            className="btn" 
+            onClick={() => this.handleFilter("Personal")}>
+            Personal
           </button>
+          <button 
+            className="btn" 
+            onClick={() => this.handleFilter("Games")}>
+            Games
+          </button>
+          <button 
+            className="btn" 
+            onClick={() => this.handleFilter("Misc")}>
+            Misc
+          </button>
+          
         </div>
         <div className="portfolio-items-wrapper">{this.portfolioItems()}</div>
       </div>
     );
   }
 }
-{/* <button className="btn" onClick={() => this.handleFilter("Personal")}>
-          Personal
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Games")}>
-          Games
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Misc")}>
-          Misc
-        </button> */}
+{/*      */}

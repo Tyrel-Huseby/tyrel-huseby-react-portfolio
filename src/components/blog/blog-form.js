@@ -6,6 +6,7 @@ import filepickerCss from "../../../node_modules/react-dropzone-component/styles
 import dropzoneCss from "../../../node_modules/dropzone/dist/min/dropzone.min.css";
 
 import RichTextEditor from "../forms/rich-text-editor";
+
 export default class BlogForm extends Component {
   constructor(props) {
     super(props);
@@ -22,12 +23,13 @@ export default class BlogForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleRichTextEditorChange = handleRichTextEditorChange.bind(this);
+    this.handleRichTextEditorChange = this.handleRichTextEditorChange.bind(
+      this
+    );
 
     this.componentConfig = this.componentConfig.bind(this);
     this.djsConfig = this.djsConfig.bind(this);
     this.handleFeaturedImageDrop = this.handleFeaturedImageDrop.bind(this);
-
     this.deleteImage = this.deleteImage.bind(this);
     this.featuredImageRef = React.createRef();
   }
@@ -82,14 +84,12 @@ export default class BlogForm extends Component {
     return {
       addedfile: file => this.setState({ featured_image: file })
     };
-}
+  }
 
-handleRichTextEditorChange(content) {
-  this.setState({
-    content: content
-  })
-}
-  
+  handleRichTextEditorChange(content) {
+    this.setState({ content });
+  }
+
   buildForm() {
     let formData = new FormData();
 
@@ -160,19 +160,19 @@ handleRichTextEditorChange(content) {
             value={this.state.title}
           />
 
-        <input
+          <input
             type="text"
             onChange={this.handleChange}
             name="blog_status"
-            placeholder="Blog status"
+            placeholder="Blog status (draft or published)"
             value={this.state.blog_status}
           />
         </div>
 
-        <div className = "one-column">
+        <div className="one-column">
           <RichTextEditor
             handleRichTextEditorChange={this.handleRichTextEditorChange}
-            editMode={this.props.editMode}
+            editMode={this.props.editMode || null}
             contentToEdit={
               this.props.editMode && this.props.blog.content
                 ? this.props.blog.content
@@ -180,28 +180,28 @@ handleRichTextEditorChange(content) {
             }
           />
         </div>
-        
+
         <div className="image-uploaders">
           {this.props.editMode && this.props.blog.featured_image_url ? (
-              <div className="portfolio-manager-image-wrapper">
-                <img src={this.props.blog.featured_image_url} />
+            <div className="portfolio-manager-image-wrapper">
+              <img src={this.props.blog.featured_image_url} />
 
-                <div className="image-removal-link">
+              <div className="image-removal-link">
                 <a onClick={() => this.deleteImage("featured_image")}>
                   Remove file
                 </a>
-                </div>
               </div>
-            ) : (
-              <DropzoneComponent
-                ref={this.featuredImageRef}
-                config={this.componentConfig()}
-                djsConfig={this.djsConfig()}
-                eventHandlers={this.handleFeaturedImageDrop()}
-              >
-                <div className="dz-message">Featured Image</div>
-              </DropzoneComponent>
-            )}
+            </div>
+          ) : (
+            <DropzoneComponent
+              ref={this.featuredImageRef}
+              config={this.componentConfig()}
+              djsConfig={this.djsConfig()}
+              eventHandlers={this.handleFeaturedImageDrop()}
+            >
+              <div className="dz-message">Featured Image</div>
+            </DropzoneComponent>
+          )}
         </div>
 
         <button className="btn">Save</button>

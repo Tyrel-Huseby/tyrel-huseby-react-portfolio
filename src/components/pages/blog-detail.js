@@ -17,7 +17,9 @@ export default class BlogDetail extends Component {
 
     this.handleEditClick = this.handleEditClick.bind(this);
     this.handleFeaturedImageDelete = this.handleFeaturedImageDelete.bind(this);
-    this.handleUpdateFormSubmission = this.handleUpdateFormSubmission.bind(this);
+    this.handleUpdateFormSubmission = this.handleUpdateFormSubmission.bind(
+      this
+    );
   }
 
   handleUpdateFormSubmission(blog) {
@@ -38,7 +40,7 @@ export default class BlogDetail extends Component {
   handleEditClick() {
     if (this.props.loggedInStatus === "LOGGED_IN") {
       this.setState({ editMode: true });
-    }  
+    }
   }
 
   getBlogItem() {

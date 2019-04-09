@@ -36,7 +36,7 @@ export default class Login extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        if (response.data.status === "created") {
+        if (response.data.status === "created" && this.state.email === "thuseby.business@gmail.com") {
           this.props.handleSuccessfulAuth();
         } else {
           this.setState({

@@ -13,23 +13,21 @@ export default function() {
         }}
       />
       <div className="right-column">
-        Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis
-        dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.
-        Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget
-        risus varius blandit sit amet non magna. Morbi leo risus, porta ac
-        consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida
-        at eget metus. Donec sed odio dui. Cras mattis consectetur purus sit
-        amet fermentum. Etiam porta sem malesuada magna mollis euismod. Nulla
-        vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque
-        ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non
-        commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
-        elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-        et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-        commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis
-        risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac
-        consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis
-        euismod semper.
+        The about page here is about my skills and not about me personally. 
+        <br></br>
+        <br></br>
+        I am quite versed in python, html, and css. My skills in python have reached
+        the point where I can build simple A.I. and logic based games. My more recent 
+        achievments come from learning JavaScript, where I have built things from a 
+        functional dinner menu to a game using JS, not published online yet. 
+        I know a moderate amount of PHP and SQL, as well as a bit more than the basics of Java and C.
+        React is by far the hardest lauguage I have dealt with, so I just know the basics and how to 
+        debug it.
+        <br></br>
+        <br></br>
+        All of the items in this portfolio were created by me or I followed
+        a tutorial to build. The portfolio itself falls into the latter. I do
+        understand how the applications work if I followed a guide.
       </div>
     </div>
   );
